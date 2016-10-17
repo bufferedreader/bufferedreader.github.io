@@ -1,0 +1,120 @@
+﻿<html>  
+	<head>
+		<script type="text/javascript">
+
+			var urls = 
+			["http://www.google.com",
+			 "http://www.facebook.com",
+			 "http://www.youtube.com",
+			 "http://www.yahoo.com",
+			 "http://www.baidu.com",
+			 "http://en.wikipedia.org/wiki/Main_Page",
+			 "http://www.twitter.com",
+			 "http://www.amazon.com",
+			 "http://www.linkedin.com",
+			 "http://www.qq.com",
+			 "http://www.taobao.com",
+			 "http://www.msn.com",
+			 "http://www.hao123.com",
+			 "http://www.blogspot.com",
+			 "http://www.sina.com.cn",
+			 "http://www.weibo.com",
+			 "http://www.yahoo.co.jp",
+			 "http://www.tmall.com",
+			 "http://www.yandex.ru",
+			 "http://www.sohu.com",
+			 "http://www.bing.com",
+			 "http://www.pinterest.com",
+			 "http://www.wordpress.com",
+			 "http://www.vk.com",
+			 "http://www.ebay.com",
+			 "http://www.instagram.com",
+			 "http://www.360.cn",
+			 "http://www.apple.com",
+			 "http://www.ask.com",
+			 "http://www.paypal.com",
+			 "http://www.soso.com",
+			 "http://www.tumblr.com",
+			 "http://www.microsoft.com",
+			 "http://www.mail.ru",
+			 "http://www.imgur.com",	
+			 "http://www.reddit.com",
+			 "http://www.163.com",
+			 "http://www.imdb.com",
+			 "http://www.stackoverflow.com",
+			 "http://www.craigslist.org",
+			 "http://www.aliexpress.com",
+			 "http://www.go.com",
+			 "http://www.adcash.com",
+			 "http://www.alibaba.com",
+			 "http://www.fc2.com",
+			 "http://www.cnn.com",
+			 "http://www.wordpress.org",
+			 "http://www.bbc.co.uk",
+ 			 "http://www.adobe.com",
+ 			 "http://www.gmw.cn",
+			 "http://www.intel.com" ]; 
+			
+			var index = -1;  	
+			var w ;
+			var timerID ;
+			var refreshTime;
+			var first = 0;
+			
+			function Start()
+			{
+				refreshTime = this.document.getElementById("refreshtime").value;
+				index = -1;
+				first = 0;
+				goURL();
+			}
+			
+			function goURL() 
+			{  	
+				index = index + 1;
+				
+				if(index == urls.length)
+				{
+					index = 0 ;
+				}
+				
+			    clearInterval(timerID);
+				
+	
+				timerID = setInterval("goURL()",refreshTime*1000);
+		
+			
+				if(first == 0)
+				{
+					w = window.open(urls[index]);
+					first = 1;
+				}
+				else
+				{
+					w.location.href = urls[index];
+				}
+			}
+			
+	</script> 
+	</head>
+
+	<body>  
+	
+	<div align = "center">
+	
+		<h1>Instructions</h1>
+		<br>
+		Step 1. Fill webpage refresh time  <input name="refreshtime" size=5 id="refreshtime" type="text" value="10"> seconds 
+		<br>
+		<br>
+		Step 2. Click start button<button type="button" onclick="Start();">Start</button>
+		<br>
+		<br>
+		Last Update Date : 2014/10/03
+
+	</div>	
+	</body>  
+</html>  
+
+
+	
